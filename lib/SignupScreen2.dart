@@ -59,7 +59,7 @@ class _SignupScreen2State extends State<SignupScreen2> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    DatabaseReference userReg = FirebaseDatabase.instance
+                    //DatabaseReference userReg = FirebaseDatabase.instance
 
                   },
                   child: const Text(

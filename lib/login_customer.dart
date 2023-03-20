@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:fyp_plan_it/SignUpScreen2.dart';
 import 'package:fyp_plan_it/mainhome.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'authenticate.dart';
 
 class SignInTwo extends StatelessWidget {
   const SignInTwo({Key? key}) : super(key: key);
+    
 
   @override
   Widget build(BuildContext context) {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
     final size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -119,7 +123,7 @@ class SignInTwo extends StatelessWidget {
     );
   }
 
-  Widget passwordTextField(Size size) {
+  Widget passwordTextField(Size size,) {
     return Container(
       alignment: Alignment.center,
       height: size.height / 11,
@@ -138,6 +142,7 @@ class SignInTwo extends StatelessWidget {
         ),
         maxLines: 1,
         obscureText: true,
+        controller: passwordController,
         keyboardType: TextInputType.visiblePassword,
         cursorColor: const Color(0xFF15224F),
         decoration: InputDecoration(
@@ -201,7 +206,9 @@ class SignInTwo extends StatelessWidget {
               ),
             ])),
         GestureDetector(
-          onTap: () {
+          onTap: 
+          Auth().signinWithEmailandPassword(password: passwor);
+          () {
             Navigator.of(context).push(MaterialPageRoute(
                 builder: (BuildContext context) => SignupScreen2()));
           },

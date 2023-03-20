@@ -81,7 +81,7 @@ class _SignupScreen1State extends State<SignupScreen1> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      _firebaseAuth.createuser
+                      //_firebaseAuth.createuser
                     },
                     child: const Text(
                       'Register',

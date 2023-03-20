@@ -1,4 +1,6 @@
 import "package:flutter/material.dart";
+import 'authenticate.dart';
+import 'login_customer.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -106,10 +108,11 @@ class _HomeScreen extends State<HomeScreen> {
                         color: Color.fromRGBO(238, 240, 248, 1),
                         size: 30,
                       ),
-                      Text(
-                        ' logout',
-                        style:
-                            TextStyle(color: Color.fromRGBO(238, 240, 248, 1)),
+                      new GestureDetector(
+                        onTap: () {
+                          Auth().signOut();
+                        },
+                        child: new Text("Logout"),
                       )
                     ],
                   ),
