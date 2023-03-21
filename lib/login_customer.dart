@@ -3,15 +3,28 @@ import 'package:fyp_plan_it/SignUpScreen2.dart';
 import 'package:fyp_plan_it/mainhome.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'authenticate.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class SignInTwo extends StatelessWidget {
+class SignInTwo extends StatefulWidget {
   const SignInTwo({Key? key}) : super(key: key);
-    
 
   @override
-  Widget build(BuildContext context) {
+  _SignInTwoState createstate() => _SignInTwoState();
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return _SignInTwoState();
+  }
+}
+
+final _auth = FirebaseAuth.instance;
+
+class _SignInTwoState extends State<SignInTwo> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -111,6 +124,7 @@ class SignInTwo extends StatelessWidget {
           color: const Color(0xFF15224F),
         ),
         maxLines: 1,
+        controller: emailController,
         cursorColor: const Color(0xFF15224F),
         decoration: InputDecoration(
             labelText: 'Email/ Phone number',
@@ -123,7 +137,9 @@ class SignInTwo extends StatelessWidget {
     );
   }
 
-  Widget passwordTextField(Size size,) {
+  Widget passwordTextField(
+    Size size,
+  ) {
     return Container(
       alignment: Alignment.center,
       height: size.height / 11,
@@ -172,8 +188,19 @@ class SignInTwo extends StatelessWidget {
         ],
       ),
       child: ElevatedButton(
-        onPressed: () => Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => const HomeScreen())),
+        onPressed: () async {
+          try {
+            final user = await _auth.signInWithEmailAndPassword(
+                email: emailController.text, password: passwordController.text);
+            if (user != null) {
+              Navigator.pushNamed(context, 'homescreen');
+            }
+          } catch (e) {
+            print(e);
+          }
+        },
+        // () => Navigator.of(context)
+        //  .push(MaterialPageRoute(builder: (context) => const HomeScreen())),
         child: Text(
           'Sign in',
           style: GoogleFonts.inter(
@@ -206,9 +233,9 @@ class SignInTwo extends StatelessWidget {
               ),
             ])),
         GestureDetector(
-          onTap: 
-          Auth().signinWithEmailandPassword(password: passwor);
-          () {
+          onTap:
+              //    Auth().signinWithEmailandPassword(password: passwor);
+              () {
             Navigator.of(context).push(MaterialPageRoute(
                 builder: (BuildContext context) => SignupScreen2()));
           },

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fyp_plan_it/SplashScreen.dart';
+import 'package:fyp_plan_it/mainhome.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        'homescreen': (context) => HomeScreen(),
+      },
       title: 'Plan-It',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(

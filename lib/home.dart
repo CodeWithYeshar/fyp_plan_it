@@ -69,8 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: 140,
                     child: ElevatedButton(
                       onPressed: () => Navigator.of(context).push(
-                          MaterialPageRoute(
-                              builder: (context) => const SignInTwo())),
+                          MaterialPageRoute(builder: (context) => SignInTwo())),
                       child: Text(
                         'Customer',
                         style: TextStyle(fontSize: 24),
