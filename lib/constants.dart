@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-// colors
+// colors vars
 
 const primaryColor = Color.fromRGBO(121, 131, 198, 1);
 const darkColor = Color.fromRGBO(104, 116, 197, 1.0);
