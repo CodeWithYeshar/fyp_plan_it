@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "93814429286",
+    "project_id": "finalyearproject2023-2b30f",
+    "storage_bucket": "finalyearproject2023-2b30f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:93814429286:android:bc78e7d2317fc497d9bfa7",
+        "android_client_info": {
+          "package_name": "com.planit2023"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "93814429286-cu8acp2ifo31f31i447dl1dupku28ftb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBldTsVsURinTR0x1J50OMEFvD-eDWhpBM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "93814429286-cu8acp2ifo31f31i447dl1dupku28ftb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
